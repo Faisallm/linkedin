@@ -54,7 +54,7 @@
                     <img src="images/user-1.png">
                     <div>
                         <h3>Faisal Muhammad</h3>
-                        <a href="#">See your profile</a>
+                        <a href="profile.html">See your profile</a>
                     </div>
                 </div>
                 <hr>
@@ -113,7 +113,7 @@
                 </div>
 
             </div>
-            <div class="sidebar-activity">
+            <div class="sidebar-activity" id="sidebarActivity">
 
                 <h3>RECENT</h3>
                 <a href="#"><img src="images/recent.png"> Machine Learning</a>
@@ -138,7 +138,7 @@
                 </div>
 
             </div>
-
+            <p id="ShowMoreLink" onclick="toggleActivity()">Show more <b>+</b></p>
         </div>
 
 
@@ -452,6 +452,21 @@
             // when ever we call this function.
             // we will add or remove this menu.
             profileMenu.classList.toggle('open-menu');
+        }
+    </script>
+
+    <script>
+        let sidebarActivity = document.getElementById('sidebarActivity');
+        let moreLink = document.getElementById('ShowMoreLink');
+
+        function toggleActivity() {
+            sidebarActivity.classList.toggle('open-activity');
+
+            if (sidebarActivity.classList.contains('open-activity')) {
+                moreLink.innerHTML = "Show less <b>-</b>";
+            } else {
+                moreLink.innerHTML = "Show more <b>+</b>";
+            }
         }
     </script>
 
